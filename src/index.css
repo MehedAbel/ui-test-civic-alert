@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   CIVIC ALERT COLOR SCHEME — EDIT COLORS HERE TO RE-THEME THE ENTIRE APP
+   ========================================================================== */
+:root {
+  /* Brand / Primary Blue */
+  --civic-header: #0084d6;
+  --civic-header-drawer: #0073bd;
+  --civic-auth-bg: #0074bc;
+  --civic-primary: #008ce6;
+  --civic-primary-hover: #0077c8;
+  --civic-primary-soft: #38bdf8;
+  --civic-accent: #008ce6;
+
+  /* Light Surfaces & Canvas */
+  --civic-canvas: #f8fafc;
+  --civic-surface: #ffffff;
+  --civic-surface-subtle: #f1f5f9;
+  --civic-input: #ffffff;
+  --civic-input-readonly: rgba(248, 250, 252, 0.7);
+  --civic-hover: #f8fafc;
+  --civic-pill: rgba(226, 232, 240, 0.8);
+  --civic-pill-hover: rgba(203, 213, 225, 0.8);
+  --civic-highlight: rgba(240, 249, 255, 0.85);
+
+  /* Light Borders */
+  --civic-border: #f1f5f9;
+  --civic-border-soft: #e2e8f0;
+  --civic-border-strong: #cbd5e1;
+  --civic-border-accent: rgba(0, 140, 230, 0.35);
+  --civic-border-upload: #38bdf8;
+
+  /* Light Text */
+  --civic-text: #0f172a;
+  --civic-text-secondary: #334155;
+  --civic-text-muted: #475569;
+  --civic-text-subtle: #64748b;
+  --civic-text-faint: #94a3b8;
+
+  /* Map Controls */
+  --civic-map-attribution-bg: rgba(255, 255, 255, 0.82);
+  --civic-map-attribution-text: #334155;
+  --civic-map-zoom-bg: #ffffff;
+  --civic-map-zoom-text: #0f172a;
+  --civic-map-zoom-border: #cbd5e1;
+  --civic-map-zoom-hover: #f8fafc;
+
+  /* ========================================================================
+     STANDARDIZED SHAPE, ELEVATION, LAYOUT & MOTION CONSTANTS
+     ======================================================================== */
+  /* Border Radii */
+  --civic-radius-card: 1rem;       /* 16px: Main cards, modals, legend, preview */
+  --civic-radius-panel: 0.75rem;   /* 12px: Floating controls, alerts, carousels */
+  --civic-radius-control: 0.5rem;  /* 8px: Inputs, selects, compact buttons */
+  --civic-radius-pill: 9999px;     /* Full pill: Primary CTAs, filter tabs, badges */
+
+  /* Shadows / Elevation */
+  --civic-shadow-card: 0 8px 28px rgba(15, 23, 42, 0.06);
+  --civic-shadow-subcard: 0 6px 22px rgba(15, 23, 42, 0.07);
+  --civic-shadow-floating: 0 4px 14px rgba(0, 0, 0, 0.22);
+  --civic-shadow-modal: 0 18px 45px rgba(0, 0, 0, 0.26);
+
+  /* Layout & Container Widths */
+  --civic-topbar-h: 3.5rem;
+  --civic-map-h: calc(100vh - var(--civic-topbar-h));
+  --civic-drawer-w: 360px;
+  --civic-drawer-offset: calc(var(--civic-drawer-w) + 15px);
+  --civic-topbar-max-w: 1600px;
+  --civic-portal-max-w: 1440px;
+  --civic-profile-max-w: 72rem;
+  --civic-reports-max-w: 64rem;
+  --civic-auth-max-w: 440px;
+  --civic-modal-max-w: 460px;
+  --civic-preview-max-w: 330px;
+  --civic-preview-w: calc(100% - 2rem);
+
+  /* Motion */
+  --civic-transition: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --civic-topbar-h: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --civic-drawer-w: 390px;
+  }
+}
+
+.dark {
+  /* Darkened Brand Blue */
+  --civic-header: #005b96;
+  --civic-header-drawer: #004d80;
+  --civic-auth-bg: #004f82;
+  --civic-primary: #006cb3;
+  --civic-primary-hover: #005b99;
+  --civic-primary-soft: #38bdf8;
+  --civic-accent: #38a8f5;
+
+  /* Near-Black / Dark Gray Surfaces */
+  --civic-canvas: #0a0a0a;
+  --civic-surface: #141414;
+  --civic-surface-subtle: #1e1e1e;
+  --civic-input: #0c0c0c;
+  --civic-input-readonly: #0d0d0d;
+  --civic-hover: #1e1e1e;
+  --civic-pill: #1c1c1c;
+  --civic-pill-hover: #262626;
+  --civic-highlight: #1e1e1e;
+
+  /* Dark Borders */
+  --civic-border: #262626;
+  --civic-border-soft: #2c2c2c;
+  --civic-border-strong: #2e2e2e;
+  --civic-border-accent: rgba(0, 140, 230, 0.35);
+  --civic-border-upload: #006cb3;
+
+  /* Dark Text */
+  --civic-text: #f5f5f5;
+  --civic-text-secondary: #e5e5e5;
+  --civic-text-muted: #d4d4d4;
+  --civic-text-subtle: #a3a3a3;
+  --civic-text-faint: #737373;
+
+  /* Dark Shadows */
+  --civic-shadow-card: 0 8px 28px rgba(0, 0, 0, 0.35);
+  --civic-shadow-subcard: 0 6px 22px rgba(0, 0, 0, 0.3);
+  --civic-shadow-floating: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --civic-shadow-modal: 0 18px 45px rgba(0, 0, 0, 0.6);
+
+  /* Map Controls */
+  --civic-map-attribution-bg: rgba(14, 14, 14, 0.88);
+  --civic-map-attribution-text: #d4d4d4;
+  --civic-map-zoom-bg: #141414;
+  --civic-map-zoom-text: #f5f5f5;
+  --civic-map-zoom-border: #2c2c2c;
+  --civic-map-zoom-hover: #242424;
+}
+
+@theme inline {
+  --color-civic-header: var(--civic-header);
+  --color-civic-header-drawer: var(--civic-header-drawer);
+  --color-civic-auth-bg: var(--civic-auth-bg);
+  --color-civic-primary: var(--civic-primary);
+  --color-civic-primary-hover: var(--civic-primary-hover);
+  --color-civic-primary-soft: var(--civic-primary-soft);
+  --color-civic-accent: var(--civic-accent);
+
+  --color-civic-canvas: var(--civic-canvas);
+  --color-civic-surface: var(--civic-surface);
+  --color-civic-surface-subtle: var(--civic-surface-subtle);
+  --color-civic-input: var(--civic-input);
+  --color-civic-input-readonly: var(--civic-input-readonly);
+  --color-civic-hover: var(--civic-hover);
+  --color-civic-pill: var(--civic-pill);
+  --color-civic-pill-hover: var(--civic-pill-hover);
+  --color-civic-highlight: var(--civic-highlight);
+
+  --color-civic-border: var(--civic-border);
+  --color-civic-border-soft: var(--civic-border-soft);
+  --color-civic-border-strong: var(--civic-border-strong);
+  --color-civic-border-accent: var(--civic-border-accent);
+  --color-civic-border-upload: var(--civic-border-upload);
+
+  --color-civic-text: var(--civic-text);
+  --color-civic-text-secondary: var(--civic-text-secondary);
+  --color-civic-text-muted: var(--civic-text-muted);
+  --color-civic-text-subtle: var(--civic-text-subtle);
+  --color-civic-text-faint: var(--civic-text-faint);
+
+  --radius-civic-card: var(--civic-radius-card);
+  --radius-civic-panel: var(--civic-radius-panel);
+  --radius-civic-control: var(--civic-radius-control);
+  --radius-civic-pill: var(--civic-radius-pill);
+
+  --shadow-civic-card: var(--civic-shadow-card);
+  --shadow-civic-subcard: var(--civic-shadow-subcard);
+  --shadow-civic-floating: var(--civic-shadow-floating);
+  --shadow-civic-modal: var(--civic-shadow-modal);
+}
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    margin: 0;
+  }
+}
+
+.font-mono,
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Leaflet theme integration */
+.civic-map-container .leaflet-control-attribution {
+  font-size: 11px;
+  background: var(--civic-map-attribution-bg) !important;
+  color: var(--civic-map-attribution-text) !important;
+  backdrop-filter: blur(4px);
+}
+
+.dark .civic-map-container .leaflet-control-attribution a {
+  color: var(--civic-accent) !important;
+}
+
+.dark .civic-map-container .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(88%) contrast(95%) saturate(75%);
+}
+
+.dark .civic-map-container .leaflet-control-zoom a {
+  background-color: var(--civic-map-zoom-bg) !important;
+  color: var(--civic-map-zoom-text) !important;
+  border-color: var(--civic-map-zoom-border) !important;
+}
+
+.dark .civic-map-container .leaflet-control-zoom a:hover {
+  background-color: var(--civic-map-zoom-hover) !important;
+}
+
+.civic-pin-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.civic-pin-marker {
+  transition: transform var(--civic-transition);
+}
+
+.civic-pin-marker:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.civic-map-container.civic-pin-drop-mode,
+.civic-map-container.civic-pin-drop-mode .leaflet-grab {
+  cursor: crosshair !important;
+}
