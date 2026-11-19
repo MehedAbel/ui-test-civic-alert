@@ -9,7 +9,7 @@ import { IssueReportModal } from './IssueReportModal.jsx';
 import { MapLegend } from './MapLegend.jsx';
 import { PinPreviewCard } from './PinPreviewCard.jsx';
 
-const DEFAULT_CENTER = [51.5105, -0.1195];
+const DEFAULT_CENTER = [44.3100, 23.8100];
 
 export function CitizenMapView({ focusIssueId, pinDropTrigger, onClearFocus }) {
   const mapContainerRef = useRef(null);
