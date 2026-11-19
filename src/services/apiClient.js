@@ -77,7 +77,7 @@ async function request(path, options = {}) {
       {
         ...options,
         headers,
-        credentials: 'include',
+        // credentials: 'include',
         redirect: 'manual',
       },
       retries
