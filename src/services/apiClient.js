@@ -70,6 +70,8 @@ async function request(path, options = {}) {
 
   let response;
   try {
+    console.log("API BASE URL:", import.meta.env.VITE_API_BASE_URL);
+    console.log("URL2:", API_BASE);
     response = await fetchWithRetry(
       `${API_BASE}${path}`,
       {
@@ -122,6 +124,7 @@ async function request(path, options = {}) {
 
 export const apiClient = {
   login(email, password) {
+    console.log("API BASE URL:", import.meta.env.VITE_API_BASE_URL);
     return request('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
