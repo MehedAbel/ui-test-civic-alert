@@ -88,6 +88,7 @@ export function CitizenMapView({ focusIssueId, pinDropTrigger, onClearFocus }) {
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
+      referrerPolicy: 'strict-origin-when-cross-origin',
       maxZoom: 19,
     }).addTo(map);
 
