@@ -308,7 +308,7 @@ export function AuthViews({ mode, onSuccessRedirect }) {
             </button>
           </form>
 
-          {mode === 'login' && (
+          {/* {mode === 'login' && (
             <div className="pt-3 border-t border-civic-border space-y-2">
               <p className="text-center text-[11px] font-medium text-civic-text-subtle">
                 Quick-fill demo roles:
@@ -343,7 +343,7 @@ export function AuthViews({ mode, onSuccessRedirect }) {
                 </button>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </main>
     </div>
