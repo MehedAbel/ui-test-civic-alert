@@ -1,0 +1,10 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*"]
+  },
+
+  "globalHeaders": {
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}
